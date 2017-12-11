@@ -1,0 +1,2 @@
+# you may want to override this if you're developing
+#LINUX_OVERRIDE_SRCDIR="/mnt/android/kexec-midas"
