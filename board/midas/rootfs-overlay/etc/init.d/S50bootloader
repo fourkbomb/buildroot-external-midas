@@ -1,0 +1,12 @@
+#!/bin/sh
+ROOT=/dev/`lsblk -o KNAME,PARTLABEL | grep USERDATA | cut -f 1 -d ' '`
+mkdir /mnt/root
+mount $ROOT /mnt/root
+
+echo BL: mounted $ROOT on /mnt/root > /dev/kmsg
+
+if [ -e /mnt/root/boot/config.ini ]; then
+    bootloader /mnt/root/boot/config.ini $ROOT > /dev/kmsg
+fi
+
+echo no config.ini found, not using bootloader...
