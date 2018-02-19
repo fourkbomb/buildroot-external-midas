@@ -1,6 +1,16 @@
 #!/bin/sh
 ROOT=/dev/`lsblk -o KNAME,PARTLABEL | grep USERDATA | cut -f 1 -d ' '`
+BOOTDATA=/dev/`lsblk -o KNAME,PARTLABEL | grep HIDDEN | cut -f 1 -d ' '`
 mkdir /mnt/root
+mkdir /bootdata
+mount $BOOTDATA /bootdata
+
+echo BL: mounted $BOOTDATA on /bootdata > /dev/kmsg
+
+if [ -e /bootdata/config.ini ]; then
+    bootloader /bootdata/config.ini $ROOT > /dev/kmsg
+fi
+
 mount $ROOT /mnt/root
 
 echo BL: mounted $ROOT on /mnt/root > /dev/kmsg
