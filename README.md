@@ -14,8 +14,6 @@ Clone this repo:
 git clone https://github.com/fourkbomb/buildroot-external-midas
 ```
 
-Make sure you have `abootimg` installed (`sudo apt install abootimg` for Debian, or [abootimg-git](https://aur.archlinux.org/packages/abootimg-git/) for Arch).
-
 Build it:
 ```
 make -C buildroot O=$PWD/output BR2_EXTERNAL=$PWD/buildroot-external-midas samsung_midas_defconfig
