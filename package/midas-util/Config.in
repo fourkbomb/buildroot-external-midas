@@ -1,5 +1,7 @@
 config BR2_PACKAGE_MIDAS_UTIL
     bool "midas-util"
     depends on BR2_PACKAGE_DTC
+    depends on BR2_PACKAGE_TINYALSA
+    depends on BR2_PACKAGE_EXPAT
     help
         utilities for midas devices
