@@ -12,9 +12,9 @@
             type = "kernel";
             arch = "arm";
             os = "linux";
-            compression = "gzip";
+            compression = "none";
             load = <0x40000000>;
-            entry = <0x40000800>;
+            entry = <0x40000000>;
             hash@1 {
                 algo = "md5";
             };
@@ -39,6 +39,7 @@
             data = /incbin/("./rootfs.cpio.lzma");
             type = "ramdisk";
             arch = "arm";
+            os = "linux";
             compression = "lzma";
             hash@1 {
                 algo = "crc32";
