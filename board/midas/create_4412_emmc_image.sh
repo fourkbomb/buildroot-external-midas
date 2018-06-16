@@ -9,8 +9,7 @@
 ####################################
 if [ $# -lt 4 ]
 then
-    echo "usage: ./create_4412_sd_image.sh <fwbl1> <spl> <u-boot> <output file>"
-    echo "usage: ./create_4412_emmc_image.sh <output file>"
+    echo "usage: ./create_4412_emmc_image.sh <fwbl1> <spl> <u-boot> <output file>"
     exit 0
 fi
 
@@ -42,6 +41,5 @@ echo "Exynos4412 bootloader fusing"
 dd if=$3 of=$4 bs=$block_size seek=$uboot_pos
 ####################################
 
-sync
 #<Message Display>
 echo "$4 - Exynos4412 U-Boot EMMC boot image is ready."
