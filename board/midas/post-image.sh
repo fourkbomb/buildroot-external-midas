@@ -15,10 +15,10 @@ echo "Entering $BINARIES_DIR for next command..."
 (cd $BINARIES_DIR && run $mkimage -f kernel.its boot.itb) || exit 1
 rm -f $BINARIES_DIR/kernel.its
 
-#sh ${BR2_EXTERNAL_MIDAS_PATH}/board/midas/create_4412_sd_image.sh \
-#    ${BR2_EXTERNAL_MIDAS_PATH}/board/midas/p4412_s_fwbl1.bin \
-#    ${BINARIES_DIR}/i9300-spl.bin ${BINARIES_DIR}/u-boot-dtb.bin \
-#    ${BINARIES_DIR}/sdcard_bootloader.bin
+sh ${BR2_EXTERNAL_MIDAS_PATH}/board/midas/create_4412_sd_image.sh \
+    ${BR2_EXTERNAL_MIDAS_PATH}/board/midas/p4412_s_fwbl1.bin \
+    ${BINARIES_DIR}/i9300-spl.bin ${BINARIES_DIR}/u-boot.bin \
+    ${BINARIES_DIR}/sdcard_bootloader.bin
 
 sh ${BR2_EXTERNAL_MIDAS_PATH}/board/midas/create_4412_emmc_image.sh \
     ${BR2_EXTERNAL_MIDAS_PATH}/board/midas/p4412_s_fwbl1.bin \

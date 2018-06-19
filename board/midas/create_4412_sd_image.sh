@@ -23,14 +23,11 @@ fwbl1_size=16
 bl2_size=32
 #1024kB
 uboot_size=2048
-#16kB
-env_size=32
 
 reserved_position=0
 fwbl1_pos=$(($reserved_position + $reserved_size))
 bl2_pos=$(($fwbl1_pos + $fwbl1_size))
 uboot_pos=$(($bl2_pos + $bl2_size))
-env_pos=$(($uboot_pos + $uboot_size))
 
 ####################################
 echo "Exynos4412 FWBL1 fusing"
@@ -42,10 +39,6 @@ dd if=$2 of=$4 bs=$block_size seek=$bl2_pos
 echo "Exynos4412 bootloader fusing"
 dd if=$3 of=$4 bs=$block_size seek=$uboot_pos
 ####################################
-echo "Filling env with zeroes.."
-dd if=/dev/zero of=$4 bs=$block_size count=$env_size seek=$env_pos
-####################################
 
-sync
 #<Message Display>
 echo "$4 - Exynos4412 U-Boot SD card image is ready."
