@@ -1,2 +1,2 @@
 name: MIDAS
-desc: Buildroot external tree to build midas kexec third-stage bootloader
+desc: Buildroot external tree for midas devices running u-boot

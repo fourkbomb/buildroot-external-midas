@@ -19,7 +19,7 @@ Build it:
 make -C buildroot O=$PWD/output BR2_EXTERNAL=$PWD/buildroot-external-midas samsung_midas_defconfig
 ```
 
-If you wish to make modifications to [the kernel used](https://github.com/fourkbomb/linux/tree/kexec), clone it somewhere (make sure you use the `kexec` branch)
+If you wish to make modifications to [the kernel used](https://github.com/fourkbomb/linux/tree/master), clone it somewhere (you probably want to use the `master` branch)
 and edit local.mk.template appropriately:
 
 ```
