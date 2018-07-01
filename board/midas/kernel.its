@@ -6,7 +6,7 @@
     #address-cells = <1>;
 
     images {
-        kernel@1 {
+        kernel-1 {
             description = "kernel";
             data = /incbin/("./zImage");
             type = "kernel";
@@ -15,98 +15,98 @@
             compression = "none";
             load = <0x40000000>;
             entry = <0x40000000>;
-            hash@1 {
+            hash-1 {
                 algo = "md5";
             };
-            hash@2 {
+            hash-2 {
                 algo = "sha1";
             };
         };
 
-        fdt@1 {
+        fdt-1 {
             description = "exynos4412-i9300.dtb";
             data = /incbin/("./exynos4412-i9300.dtb");
             type = "flat_dt";
             arch = "arm";
             compression = "none";
-            hash@1 {
+            hash-1 {
                 algo = "crc32";
             };
         };
 
-        fdt@2 {
+        fdt-2 {
             description = "exynos4412-i9305.dtb";
             data = /incbin/("./exynos4412-i9305.dtb");
             type = "flat_dt";
             arch = "arm";
             compression = "none";
-            hash@1 {
+            hash-1 {
                 algo = "crc32";
             };
         };
 
-        fdt@3 {
+        fdt-3 {
             description = "exynos4412-n7100.dtb";
             data = /incbin/("./exynos4412-n7100.dtb");
             type = "flat_dt";
             arch = "arm";
             compression = "none";
-            hash@1 {
+            hash-1 {
                 algo = "crc32";
             };
         };
 
-        fdt@4 {
+        fdt-4 {
             description = "exynos4412-n7105.dtb";
             data = /incbin/("./exynos4412-n7105.dtb");
             type = "flat_dt";
             arch = "arm";
             compression = "none";
-            hash@1 {
+            hash-1 {
                 algo = "crc32";
             };
         };
 
-        ramdisk@1 {
+        ramdisk-1 {
             description = "buildroot ramdisk";
             data = /incbin/("./rootfs.cpio.lzma");
             type = "ramdisk";
             arch = "arm";
             os = "linux";
             compression = "lzma";
-            hash@1 {
+            hash-1 {
                 algo = "crc32";
             };
         };
     };
 
     configurations {
-        conf@1 {
+        conf-1 {
             description = "exynos4412-i9300";
-            kernel = "kernel@1";
-            fdt = "fdt@1";
-            ramdisk = "ramdisk@1";
+            kernel = "kernel-1";
+            fdt = "fdt-1";
+            ramdisk = "ramdisk-1";
         };
 
-        conf@2 {
+        conf-2 {
             description = "exynos4412-i9305";
-            kernel = "kernel@1";
-            fdt = "fdt@2";
-            ramdisk = "ramdisk@1";
+            kernel = "kernel-1";
+            fdt = "fdt-2";
+            ramdisk = "ramdisk-1";
         };
 
-        conf@3 {
+        conf-3 {
             description = "exynos4412-n7100";
-            kernel = "kernel@1";
-            fdt = "fdt@3";
-            ramdisk = "ramdisk@1";
+            kernel = "kernel-1";
+            fdt = "fdt-3";
+            ramdisk = "ramdisk-1";
         };
 
-        conf@4 {
+        conf-4 {
             description = "exynos4412-n7105";
-            kernel = "kernel@1";
-            fdt = "fdt@4";
-            ramdisk = "ramdisk@1";
+            kernel = "kernel-1";
+            fdt = "fdt-4";
+            ramdisk = "ramdisk-1";
         };
     };
 };
