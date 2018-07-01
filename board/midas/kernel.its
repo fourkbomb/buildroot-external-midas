@@ -1,12 +1,10 @@
-
 /dts-v1/;
 
 / {
     description = "Galaxy S III / Galaxy Note 2 boot image";
-    #address-cells = <1>;
 
     images {
-        kernel-1 {
+        kernel {
             description = "kernel";
             data = /incbin/("./zImage");
             type = "kernel";
@@ -23,51 +21,79 @@
             };
         };
 
-        fdt-1 {
+        fdt-i9300 {
             description = "exynos4412-i9300.dtb";
             data = /incbin/("./exynos4412-i9300.dtb");
             type = "flat_dt";
             arch = "arm";
             compression = "none";
+            load = <0x60000000>;
             hash-1 {
                 algo = "crc32";
             };
         };
 
-        fdt-2 {
+        fdt-i9305 {
             description = "exynos4412-i9305.dtb";
             data = /incbin/("./exynos4412-i9305.dtb");
             type = "flat_dt";
             arch = "arm";
             compression = "none";
+            load = <0x60000000>;
             hash-1 {
                 algo = "crc32";
             };
         };
 
-        fdt-3 {
+        fdt-n7100 {
             description = "exynos4412-n7100.dtb";
             data = /incbin/("./exynos4412-n7100.dtb");
             type = "flat_dt";
             arch = "arm";
             compression = "none";
+            load = <0x60000000>;
             hash-1 {
                 algo = "crc32";
             };
         };
 
-        fdt-4 {
+        fdt-n7105 {
             description = "exynos4412-n7105.dtb";
             data = /incbin/("./exynos4412-n7105.dtb");
             type = "flat_dt";
             arch = "arm";
             compression = "none";
+            load = <0x60000000>;
             hash-1 {
                 algo = "crc32";
             };
         };
 
-        ramdisk-1 {
+        dto-ea8061 {
+            description = "exynos4412-n710x-ea8061.dtbo";
+            data = /incbin/("./exynos4412-n710x-ea8061.dtb");
+            type = "flat_dt";
+            arch = "arm";
+            compression = "none";
+            load = <0x6fc00000>;
+            hash-1 {
+                algo = "crc32";
+            };
+        };
+
+        dto-s6evr02 {
+            description = "exynos4412-n710x-s6evr02.dtbo";
+            data = /incbin/("./exynos4412-n710x-s6evr02.dtb");
+            type = "flat_dt";
+            arch = "arm";
+            compression = "none";
+            load = <0x6fc00000>;
+            hash-1 {
+                algo = "crc32";
+            };
+        };
+
+        ramdisk {
             description = "buildroot ramdisk";
             data = /incbin/("./rootfs.cpio.lzma");
             type = "ramdisk";
@@ -81,32 +107,40 @@
     };
 
     configurations {
-        conf-1 {
+        exynos4412-i9300 {
             description = "exynos4412-i9300";
-            kernel = "kernel-1";
-            fdt = "fdt-1";
-            ramdisk = "ramdisk-1";
+            kernel = "kernel";
+            fdt = "fdt-i9300";
+            ramdisk = "ramdisk";
         };
 
-        conf-2 {
+        exynos4412-i9305 {
             description = "exynos4412-i9305";
-            kernel = "kernel-1";
-            fdt = "fdt-2";
-            ramdisk = "ramdisk-1";
+            kernel = "kernel";
+            fdt = "fdt-i9305";
+            ramdisk = "ramdisk";
         };
 
-        conf-3 {
+        exynos4412-n7100 {
             description = "exynos4412-n7100";
-            kernel = "kernel-1";
-            fdt = "fdt-3";
-            ramdisk = "ramdisk-1";
+            kernel = "kernel";
+            fdt = "fdt-n7100";
+            ramdisk = "ramdisk";
         };
 
-        conf-4 {
+        exynos4412-n7105 {
             description = "exynos4412-n7105";
-            kernel = "kernel-1";
-            fdt = "fdt-4";
-            ramdisk = "ramdisk-1";
+            kernel = "kernel";
+            fdt = "fdt-n7105";
+            ramdisk = "ramdisk";
+        };
+
+        note2-ea8061 {
+            fdt = "dto-ea8061";
+        };
+
+        note2-s6evr02 {
+            fdt = "dto-s6evr02";
         };
     };
 };
