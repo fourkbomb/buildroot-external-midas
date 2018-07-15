@@ -21,7 +21,7 @@
             };
         };
 
-        fdt-i9300 {
+        exynos4412-i9300 {
             description = "exynos4412-i9300.dtb";
             data = /incbin/("./exynos4412-i9300.dtb");
             type = "flat_dt";
@@ -33,7 +33,7 @@
             };
         };
 
-        fdt-i9305 {
+        exynos4412-i9305 {
             description = "exynos4412-i9305.dtb";
             data = /incbin/("./exynos4412-i9305.dtb");
             type = "flat_dt";
@@ -45,7 +45,7 @@
             };
         };
 
-        fdt-n7100 {
+        exynos4412-n7100 {
             description = "exynos4412-n7100.dtb";
             data = /incbin/("./exynos4412-n7100.dtb");
             type = "flat_dt";
@@ -57,7 +57,7 @@
             };
         };
 
-        fdt-n7105 {
+        exynos4412-n7105 {
             description = "exynos4412-n7105.dtb";
             data = /incbin/("./exynos4412-n7105.dtb");
             type = "flat_dt";
@@ -110,36 +110,36 @@
         exynos4412-i9300 {
             description = "exynos4412-i9300";
             kernel = "kernel";
-            fdt = "fdt-i9300";
+            fdt = "exynos4412-i9300";
             ramdisk = "ramdisk";
         };
 
         exynos4412-i9305 {
             description = "exynos4412-i9305";
             kernel = "kernel";
-            fdt = "fdt-i9305";
+            fdt = "exynos4412-i9305";
             ramdisk = "ramdisk";
         };
 
         exynos4412-n7100 {
             description = "exynos4412-n7100";
             kernel = "kernel";
-            fdt = "fdt-n7100";
+            fdt = "exynos4412-n7100";
             ramdisk = "ramdisk";
         };
 
         exynos4412-n7105 {
             description = "exynos4412-n7105";
             kernel = "kernel";
-            fdt = "fdt-n7105";
+            fdt = "exynos4412-n7105";
             ramdisk = "ramdisk";
         };
 
-        note2-ea8061 {
+        exynos4412-n710x-ea8061 {
             fdt = "dto-ea8061";
         };
 
-        note2-s6evr02 {
+        exynos4412-n710x-s6evr02 {
             fdt = "dto-s6evr02";
         };
     };
